@@ -1,6 +1,6 @@
 ### Upload general data preparation scripts/examples here. 
 
-*Make sure to update this README file when adding new files (add new section to "Contents" section below).*
+*Make sure to update this README file when adding new files (add new section to "Contents" below).*
 ******
 
 # Contents
@@ -20,3 +20,23 @@
    + Module load R: `module load gcc/11.3.0  openblas/0.3.20 r/4.4.1`
    + Run the script on the server, providing the two input summary stats files as arguments:`./shared_SNPs.R /path/to/Trait1.sumstats.gz /path/to/Trait2.sumstats.gz`
 
+
+**sumstats_add_CHR_BP.R**
+* Description:
+   + R script that adds CHR & BP columns to summary stats .gz files
+   + Uses Prive et al/LDpred2 HapMap3+ SNP set and map file (`/DATA/HapMap3/map_hm3_plus.rds`)
+   + Requires `readr`,`dplyr`, and `data.table` packages
+* Input:
+   + `filelist.txt`: single column list with one sumstats.gz file per row
+* Output:
+   + `sumstat_HM3_sldxr.gz`: new sumstats file(s) with header `SNP  CHR  BP  A1  A2  Z  N`
+* Use:
+   + Save the script to a file, and make it executable by running:`chmod +x sumstats_add_CHR_BP.R`
+   + Modify file with correct paths and suffixes/extensions (see variable `outdir`)
+   + Module load R: `module load gcc/11.3.0  openblas/0.3.20 r/4.4.1`
+   + Run the script on the server, providing the filelist as an argument (make sure to include paths):
+```
+cat /path/to/filelist.txt | while read line; do
+    ./sumstats_add_CHR_BP.R /path/to/sumstats/$line ;
+done
+```
