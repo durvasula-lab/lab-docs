@@ -9,7 +9,7 @@ copy all files into a list
 ls *.sumstats_HM3_sldxr.gz > files_sldxr.txt
 ```
 
-create a bash script, /path/to/dir/trait_pairs.sh
+create a bash script, `/path/to/dir/trait_pairs.sh`
 ```
 #!/bin/bash
 
