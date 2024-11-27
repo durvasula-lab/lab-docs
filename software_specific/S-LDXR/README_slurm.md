@@ -9,7 +9,7 @@ copy all files into a list
 ls *.sumstats_HM3_sldxr.gz > files_sldxr.txt
 ```
 
-create a bash script, `/path/to/dir/trait_pairs.sh`
+create a bash script, `/path/to/dir/trait_pairs.sh`:
 ```
 #!/bin/bash
 
@@ -32,13 +32,13 @@ done
 
 **check line count of the params file to ID Slurm Array Job count.**
 
-The number of pairs in the example slurm script is 17578 lines, so we will need to split it up in order for CARC to be able to handle it. If one run (one pair) takes ~ 30 min, then a max of 96 (48x2) jobs can be submitted per batch. We'll round down to 90 to account for rounding/slow disk reads. 
+The number of pairs in the example slurm script is 17578 lines, so we will need to split it up in order for CARC to be able to handle it. If one run (one pair) takes ~ 30 min, then a max of 96 (48hr time limit x2) jobs can be submitted per batch. We'll round down to 90 to account for rounding/slow disk reads. 
 
 **Split the params.txt file:**
 ```
 split -l 90 params.txt params_
 ```
-This splits by line count (-l), and sets the output file prefix as params_. You can also split by number of output files using the -n flag.
+This splits by line count (`-l`), and sets the output file prefix as params_. You can also split by number of output files using the `-n` flag.
 
 **List each param file in another list:**
 ```
