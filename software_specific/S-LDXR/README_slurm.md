@@ -1,6 +1,8 @@
 # README for Slurm script
+*CCR Nov.27, 2024*
 
 Required files are detailed here (assuming all summary statistics are already QC-ed)
+***
 
 **Create a list of unique pheno pairs from sumstats in /path/to/dir/sumstats_sldxr:**
 
@@ -44,4 +46,4 @@ This splits by line count (`-l`), and sets the output file prefix as `params_`. 
 ```
 ls params_* > list_params.txt
 ```
-`wc -l` shows that his file is 196 lines long-- this will be the input for the slurm task array
+`wc -l` shows that this file is 196 lines long-- this will be the input for the slurm task array
