@@ -38,7 +38,7 @@ The number of pairs in the example slurm script is 17578 lines, so we will need 
 ```
 split -l 90 params.txt params_
 ```
-This splits by line count (`-l`), and sets the output file prefix as params_. You can also split by number of output files using the `-n` flag.
+This splits by line count (`-l`), and sets the output file prefix as `params_`. You can also split by number of output files using the `-n` flag.
 
 **List each param file in another list:**
 ```
