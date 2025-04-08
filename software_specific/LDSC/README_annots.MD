@@ -17,10 +17,10 @@ To use the `make_annot.py` script (from the LDSC github) to compute annot files 
 
 * `--gene-set-file`, a gene set file with the names of the genes in your gene set, one line per gene name.
 After downloading a gene set from MSigDB, for example, the Hallmark gene set, use the script `transpose_gene_list.sh` to convert the .symbols.gmt file into multiple gene sets (1 column, 1 gene per row).
-./scripts_n_codes/transpose_gene_list.sh h.all.v2024.1.Hs.symbols.gmt
+./transpose_gene_list.sh h.all.v2024.1.Hs.symbols.gmt
 this will output each gene set into the subdirectory genelists.
 
-* `--gene-coord-file`, a gene coordinate file, with columns GENE, CHR, START, and END, where START and END are base pair coordinates of TSS and TES. This file can contain more genes than are in the gene set. See `gene_annot_biomart.R`-- this will output a coord file, ex: H_ADIPOGENESIS.coord.txt in the directory `genecoords` or `genecoords_GRCh37` 
+* `--gene-coord-file`, a gene coordinate file, with columns GENE, CHR, START, and END, where START and END are base pair coordinates of TSS and TES. This file can contain more genes than are in the gene set. See `gene_annot_biomart.R`, which will output a coord file, ex: H_ADIPOGENESIS.coord.txt in the directory `genecoords` or `genecoords_GRCh37` 
 
 * `--windowsize`, the window size you would like to use. The annotation will include all SNPs within this many base pairs of the transcribed region.
 
