@@ -135,7 +135,7 @@ done < HALLMARK.list
 or, run via a SLURM script (e.g.: `annot_LD_array.slurm`). Relevent excerpt:
 ```
 for CHR in {1..22}; do
-  python /home1/cataldor/software/ldsc/ldsc.py \
+  python /path/to/software/ldsc/ldsc.py \
     --l2 \
     --print-snps /path/to/DATA/LDSC_ref/baseline_annot_snplists/baselineLD.${CHR}.snplist \
     --bfile /path/to/DATA/LDSC_ref/1000G_EUR/plink_files/1000G.EUR.QC.${CHR} \
