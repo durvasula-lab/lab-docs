@@ -53,7 +53,7 @@ for i in $(seq 1 $NUM); do
     fi
     p1=`echo $params | cut -f 1 -d ' '`
     p2=`echo $params | cut -f 2 -d ' '`
-    python /home1/cataldor/software/s-ldxr-0.3-beta/s-ldxr.py \
+    python /path/to/software/s-ldxr-0.3-beta/s-ldxr.py \
     --gcor $p1 $p2 \
     --ref-ld-chr /path/to/dir/baselineLD_v2.2_EUR/baselineLD. \
     --w-ld-chr /path/to/dir/weights_EUR/weight_EUR_standardized_chr \
