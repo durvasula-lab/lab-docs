@@ -34,11 +34,11 @@ done
 
 **check line count of the params file to ID Slurm Array Job count.**
 
-The number of pairs in the example slurm script is 17578 lines, so we will need to split it up in order for CARC to be able to handle it. If one run (one pair) takes ~ 30 min, then a max of 96 (48hr time limit x2) jobs can be submitted per batch. We'll round down to 90 to account for rounding/slow disk reads. 
+Note the number of lines (pairs) in the params file, as we will need to split it up in order for CARC to be able to handle the analyses. About 35 pairs can be run in 48 hrs, so the file needs to be split such that no single params file has more than 35 lines (pairs).
 
 **Split the params.txt file:**
 ```
-split -l 90 params.txt params_
+split -l 35 params.txt params_
 ```
 This splits by line count (`-l`), and sets the output file prefix as `params_`. You can also split by number of output files using the `-n` flag.
 
@@ -46,4 +46,4 @@ This splits by line count (`-l`), and sets the output file prefix as `params_`. 
 ```
 ls params_* > list_params.txt
 ```
-`wc -l` shows that this file is 196 lines long-- this will be the input for the slurm task array
+`wc -l` the params list file to obtain the input for the slurm task array
