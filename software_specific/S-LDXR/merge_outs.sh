@@ -3,7 +3,7 @@
 # Define input and output files
 BIN_FILE="all_bin_annots.out"
 CONT_FILE="all_binned_contannots.out"
-OUTPUT_FILE="sldxr_out_gwrg02_JAN2026.txt"
+OUTPUT_FILE="sldxr_out_[OUTPUT NAME HERE].txt"
 
 # Define continuous valued annotations to exclude
 CONT_ANNOTS="GERP.NS|MAF_Adj_Predicted_Allele_Age|MAF_Adj_LLD_AFR|Recomb_Rate_10kb|Nucleotide_Diversity_10kb|Backgrd_Selection_Stat|CpG_Content_50kb|MAF_Adj_ASMC"
