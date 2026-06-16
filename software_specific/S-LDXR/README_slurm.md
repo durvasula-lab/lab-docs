@@ -50,7 +50,7 @@ ls params_* > list_params.txt
 
 
 ---
-**Combining Outputs**
+**Combining Outputs: 1**
 
 Navigate to the directory with your S-LDXR results & run `combine_sldxr_out.sh`:
 ```bash
@@ -137,3 +137,11 @@ Key Differences:
 2. Binary annotations have GCOR (genetic correlation) - continuous annotations only have GCORSQ
 3. Continuous annotations omit some columns that binary annotations include
 4. Annotation names differ: Binary = e.g., Coding_UCSC, Continuous = converted to quintile bins (e.g., GERP.NS1)
+
+
+---
+**Combining Outputs: 2**
+
+Merge summary output files for use in R.
+
+Use shell script `merge_combined_outs.sh` inside of output directory containing the summary files. Make sure to update the `$OUTPUT_FILE` within the script before running it.
