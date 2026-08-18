@@ -3,7 +3,7 @@
 #SBATCH --mem 25G # Memory pool for all cores
 #SBATCH --error=/directory/logs/slurm_%A_%a.err
 #SBATCH --output=/directory/logs/slurm_%A_%a.out
-#SBATCH --job-name=x_redo
+#SBATCH --job-name=x_POP
 #SBATCH --time=48:00:00 #expected time of completion
 #SBATCH --array=1-10 #whatever the number of params files is (that are listed in the PARAMS_LIST file)
 
@@ -18,7 +18,7 @@ PARAM_FILE=${PDIR}/${FILE}
 NUM=$(wc -l < $PARAM_FILE)
 SLDXRDIR=~/software/sldxr_2025/s-ldxr
 GCORSCRIPT=s-ldxr.py
-CANNOT_GCOR=cont_annot_gcor.py #this version is updated to python3
+CANNOT_GCOR=cont_annot_gcor.py #if bin edge errors occur, use cont_annot_gcor_py3PATCH.py instead
 CANNOT_EXP=pred_binannot_from_contannot.py
 REF_LD_CHR=/project2/[path]/data/LDSC_ref/1000G_EUR/baselineLD_sldxr_v2.2_ldscores/baselineLD.
 W_LD_CHR=/project2/[path]/data/LDSC_ref/weights_hm3_no_MHC_sldxr/weights.hm3_noMHC.
